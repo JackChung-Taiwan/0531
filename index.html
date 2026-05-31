@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0531會議資料</title>
+  <style>
+    :root{
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --ink:#17212b;
+      --sub:#5b6773;
+      --line:#dfe5ec;
+      --blue:#1f5f99;
+      --blue2:#eaf2fa;
+      --green:#2f7d63;
+      --orange:#b96b2d;
+      --shadow:0 10px 28px rgba(20,35,50,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%);
+    }
+    a{color:var(--blue);text-decoration:none}
+    .wrap{width:min(1120px,92vw);margin:auto;padding:28px 0 54px}
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;gap:18px;
+      padding:16px 20px;margin-bottom:18px;
+      background:rgba(255,255,255,.92);border:1px solid var(--line);
+      border-radius:var(--radius);box-shadow:var(--shadow)
+    }
+    .brand{font-weight:800;letter-spacing:.02em;color:#14354f}
+    .meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .chip{padding:7px 11px;border-radius:999px;background:#eef4f9;color:#39576d;font-size:14px;font-weight:700;border:1px solid #dbe6ef}
+    .nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+    .nav a{padding:9px 13px;border-radius:12px;background:#fff;border:1px solid var(--line);font-weight:700;color:#344b5b}
+    section{margin-top:18px}
+    .grid{display:grid;gap:18px}
+    .two{grid-template-columns:1fr 1fr}
+    .three{grid-template-columns:repeat(3,1fr)}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:22px;overflow:hidden
+    }
+    h1,h2,h3,p{margin-top:0}
+    h2{font-size:25px;line-height:1.3;margin-bottom:12px;color:#17364c}
+    h3{font-size:18px;line-height:1.35;margin-bottom:8px;color:#23495d}
+    p{line-height:1.75;margin-bottom:0;color:#334653}
+    .lead{font-size:16px;color:#3d5362}
+    .muted{color:var(--sub)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .stat{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fbfdff;text-align:center}
+    .stat strong{display:block;font-size:28px;line-height:1.1;color:var(--blue)}
+    .stat span{font-size:14px;color:var(--sub);font-weight:700}
+    .agenda{display:grid;gap:10px}
+    .agenda-item{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#fbfdff}
+    .num{width:38px;height:38px;border-radius:11px;background:var(--blue2);display:grid;place-items:center;color:var(--blue);font-weight:900}
+    .poster-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+    figure{margin:0}
+    .poster{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+    .poster img{display:block;width:100%;height:auto}
+    figcaption{padding:10px 12px;background:#f8fafc;color:#52616e;font-weight:700;font-size:14px}
+    .value-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+    .value{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fbfdff}
+    .value b{display:block;color:#17364c;margin-bottom:6px}
+    ul{margin:0;padding-left:19px;line-height:1.75;color:#3b515f}
+    .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;margin-top:12px}
+    table{width:100%;border-collapse:collapse;background:#fff;min-width:620px}
+    th{background:#eef4f9;color:#17364c;padding:12px;text-align:center;border-bottom:1px solid var(--line)}
+    td{padding:11px 12px;text-align:center;border-bottom:1px solid #edf1f4;font-weight:700}
+    tr:last-child td{border-bottom:0}
+    .red{color:#c53232;font-weight:900}.green{color:var(--green);font-weight:900}.blue{color:var(--blue);font-weight:900}
+    .proposal{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+    .box{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fbfdff}
+    .vendor-card{
+      display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;
+      border:1px solid var(--line);border-radius:15px;padding:18px;background:#fbfdff
+    }
+    .button{display:inline-block;background:var(--blue);color:#fff;border-radius:12px;padding:10px 14px;font-weight:800;white-space:nowrap}
+    .taglist{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .taglist span{padding:6px 10px;border-radius:999px;background:#eef4f9;color:#415a6a;font-weight:700;font-size:14px}
+    .footer{text-align:center;margin-top:24px;color:#7b8792;font-weight:700;font-size:14px}
+    @media(max-width:900px){
+      .topbar{align-items:flex-start;flex-direction:column}
+      .meta{justify-content:flex-start}
+      .two,.three,.poster-grid,.value-list,.proposal{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr}
+      .card{padding:18px}
+      h2{font-size:22px}
+    }
+    @media print{
+      body{background:#fff}.wrap{width:100%;padding:0}.topbar,.nav,.card{box-shadow:none}.nav{display:none}section{break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand">0531 會議資料</div>
+      <div class="meta">
+        <span class="chip">學藝競賽報告</span>
+        <span class="chip">兒童樂園數位設計競賽</span>
+        <span class="chip">合作參考</span>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="頁面導覽">
+      <a href="#report">學藝競賽報告</a>
+      <a href="#contest">兒童樂園競賽</a>
+      <a href="#vendor">參考廠商</a>
+      <a href="#discussion">會議討論</a>
+    </nav>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>會議摘要</h2>
+        <p class="lead">本次會議聚焦兩項議題：整理小貓咪盃程式學藝競賽成果，並討論台北市兒童樂園數位設計競賽的規劃方向。</p>
+        <div class="stats">
+          <div class="stat"><strong>1,670+</strong><span>累計作品</span></div>
+          <div class="stat"><strong>1,058+</strong><span>麥塊作品</span></div>
+          <div class="stat"><strong>612+</strong><span>ScratchJr 作品</span></div>
+        </div>
+      </article>
+
+      <article class="card agenda">
+        <div class="agenda-item">
+          <div class="num">1</div>
+          <div><h3>學藝競賽報告</h3><p class="muted">呈現競賽目的、成果圖與近年參賽趨勢。</p></div>
+        </div>
+        <div class="agenda-item">
+          <div class="num">2</div>
+          <div><h3>兒童樂園數位設計競賽</h3><p class="muted">規劃以遊樂園場域為主題的學生創作活動。</p></div>
+        </div>
+        <div class="agenda-item">
+          <div class="num">3</div>
+          <div><h3>外部案例參考</h3><p class="muted">參考 DreamCity Studio 的場域建置與互動體驗案例。</p></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="report" class="card">
+      <h2>1. 學藝競賽報告</h2>
+      <p class="lead">以下兩張圖作為會議簡報素材，分別說明競賽目的與統計分析。</p>
+      <div class="poster-grid">
+        <figure class="poster">
+          <img src="assets/01.png" alt="學藝競賽目的與前言" />
+          <figcaption>競賽目的與前言</figcaption>
+        </figure>
+        <figure class="poster">
+          <img src="assets/02.png" alt="學藝競賽觀察重點與表格分析" />
+          <figcaption>觀察重點與統計表</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>競賽價值</h2>
+        <div class="value-list">
+          <div class="value"><b>學生</b><p>發表作品、累積自信。</p></div>
+          <div class="value"><b>校方／補習班</b><p>展示成果、建立課程形象。</p></div>
+          <div class="value"><b>家長</b><p>看見學習成果，提升參與感。</p></div>
+          <div class="value"><b>協會</b><p>累積案例，擴大活動影響力。</p></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>111 上至 114 下統計</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>學期</th><th>ScratchJr</th><th>麥塊</th><th>合計</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>111 上</td><td>74</td><td>131</td><td class="blue">205</td></tr>
+              <tr><td>111 下</td><td>84</td><td>110</td><td class="blue">194</td></tr>
+              <tr><td>112 上</td><td>56</td><td>118</td><td class="blue">174</td></tr>
+              <tr><td>112 下</td><td>74</td><td>152</td><td class="red">226</td></tr>
+              <tr><td>113 上</td><td>44</td><td>109</td><td class="blue">153</td></tr>
+              <tr><td>113 下</td><td>16</td><td class="green">166</td><td>182</td></tr>
+              <tr><td>114 上</td><td>23</td><td>93</td><td>116</td></tr>
+              <tr><td>114 下</td><td>17</td><td>105</td><td class="blue">122</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section id="contest" class="card">
+      <h2>2. 台北市兒童樂園數位設計競賽</h2>
+      <p class="lead">以兒童樂園為主題，鼓勵學生運用數位工具重現場域、設計導覽與互動任務。</p>
+      <div class="proposal">
+        <div class="box">
+          <h3>Minecraft 場域設計</h3>
+          <ul>
+            <li>重現遊樂設施與園區路線</li>
+            <li>加入 NPC 導覽與任務互動</li>
+            <li>完成作品展示與解說</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>互動設計作品</h3>
+          <ul>
+            <li>製作遊具介紹或闖關作品</li>
+            <li>可使用 ScratchJr、Scratch 或網頁</li>
+            <li>搭配公開展示與投票機制</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="vendor" class="card">
+      <h2>參考廠商：DreamCity Studio</h2>
+      <div class="vendor-card">
+        <div>
+          <p class="lead">可參考其 Minecraft 場域建置、互動體驗與虛擬展覽案例，作為兒童樂園數位競賽的規劃參考。</p>
+          <div class="taglist">
+            <span>Minecraft 場域</span>
+            <span>互動體驗</span>
+            <span>虛擬展覽</span>
+          </div>
+        </div>
+        <a class="button" href="https://www.dreamcity.studio/works" target="_blank" rel="noopener">查看作品頁</a>
+      </div>
+    </section>
+
+    <section id="discussion" class="card">
+      <h2>會議討論事項</h2>
+      <div class="grid three">
+        <div class="box"><h3>競賽定位</h3><p>確認活動名稱、主題與對外說明。</p></div>
+        <div class="box"><h3>參賽組別</h3><p>確認 Minecraft、互動設計與低年級組別。</p></div>
+        <div class="box"><h3>合作模式</h3><p>評估外部廠商協作與成果展示方式。</p></div>
+      </div>
+    </section>
+
+    <div class="footer">0531 會議資料</div>
+  </main>
+</body>
+</html>
